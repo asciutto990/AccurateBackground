@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using AccurateBackground.Enums;
 using AccurateBackground.Interfaces;
 using AccurateBackground.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace AccurateBackground.Resources
 {
@@ -16,7 +19,10 @@ namespace AccurateBackground.Resources
         public string address { get; set; }
         public string city { get; set; }
         public string region { get; set; }
-        public string country { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public CountryCode? country { get; set; }
+
         public string postalCode { get; set; }
         public string dateOfBirth { get; set; }
         public string phone { get; set; }

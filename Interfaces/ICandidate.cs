@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AccurateBackground.Enums;
 using AccurateBackground.Models;
 
 namespace AccurateBackground.Interfaces
@@ -12,7 +13,8 @@ namespace AccurateBackground.Interfaces
         string address { get; set; }
         string city { get; set; }
         string region { get; set; }
-        string country { get; set; }
+
+        CountryCode? country { get; set; }
         string postalCode { get; set; }
         string dateOfBirth { get; set; }
         string phone { get; set; }

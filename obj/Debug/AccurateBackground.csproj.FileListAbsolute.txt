@@ -1,7 +1,0 @@
-C:\Dev\NGP_HOA_APP\AccurateBackground\obj\Debug\AccurateBackground.csprojResolveAssemblyReference.cache
-C:\Dev\NGP_HOA_APP\AccurateBackground\bin\Debug\AccurateBackground.dll
-C:\Dev\NGP_HOA_APP\AccurateBackground\bin\Debug\AccurateBackground.pdb
-C:\Dev\NGP_HOA_APP\AccurateBackground\bin\Debug\Newtonsoft.Json.dll
-C:\Dev\NGP_HOA_APP\AccurateBackground\bin\Debug\Newtonsoft.Json.xml
-C:\Dev\NGP_HOA_APP\AccurateBackground\obj\Debug\AccurateBackground.dll
-C:\Dev\NGP_HOA_APP\AccurateBackground\obj\Debug\AccurateBackground.pdb

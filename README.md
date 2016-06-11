@@ -22,8 +22,14 @@ await AccurateBackgroundAPI.UpdateCandidateAsync(candidateId, input);
 <b>GET Order</b><br/>
 await AccurateBackgroundAPI.GetOrderAsync(orderId);
 
-<b>POST an Order</b><br/>
+<b>POST Order</b><br/>
 await AccurateBackgroundAPI.PlaceOrderAsync(input);
+
+<b>GET Product</b><br/>
+AccurateBackgroundAPI.GetProduct(productType);
+
+<b>GET Products</b><br/>
+AccurateBackgroundAPI.GetProducts();
 
 <b>Ping the API</b><br/>
 await AccurateBackgroundAPI.AliveAsync();

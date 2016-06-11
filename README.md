@@ -1,9 +1,11 @@
 # AccurateBackground
 
-To use the Accurage Background API, simply add your <b>Client Id</b> and <b>Client Secret</b> to your web.config
+Official API Documentation: https://developer.accuratebackground.com/#/apidoc
 
-key="AccurageBackgroundClientId" value="{{Client Id Here}}" <br/>
-key="AccurageBackgroundClientSecret" value="{{Client Secret Here}}"
+To use this .NET Accurate Background API, simply add your <b>Client Id</b> and <b>Client Secret</b> to your web.config
+
+key="AccurateBackgroundClientId" value="{{Client Id Here}}" <br/>
+key="AccurateBackgroundClientSecret" value="{{Client Secret Here}}"
 
 <b>GET Candidate</b><br/>
 await AccurateBackgroundAPI.GetCandidateAsync(candidateId);

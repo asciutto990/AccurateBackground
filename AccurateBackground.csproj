@@ -54,6 +54,8 @@
     <Compile Include="Http\AccurateHttpClient.cs" />
     <Compile Include="Http\AccurateHttpClientFactory.cs" />
     <Compile Include="Http\AccurateHttpRequestFactory.cs" />
+    <Compile Include="Http\Models\AccurateErrorResponse.cs" />
+    <Compile Include="Http\Models\AccurateErrorResponseException.cs" />
     <Compile Include="InputModels\CandidateInput.cs" />
     <Compile Include="InputModels\OrderInput.cs" />
     <Compile Include="Interfaces\ICandidate.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Resources\Order.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

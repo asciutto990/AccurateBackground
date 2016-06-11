@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using AccurateBackground.Http.Models;
 using Newtonsoft.Json;
 
 namespace AccurateBackground.Http
@@ -11,8 +13,16 @@ namespace AccurateBackground.Http
             {
                 var response = await client.GetAsync(endpoint).ConfigureAwait(false);
                 var stringifiedResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                response.EnsureSuccessStatusCode();
-                return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                    return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                }
+                catch (HttpRequestException e)
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
+                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                }
             }
         }
 
@@ -22,8 +32,16 @@ namespace AccurateBackground.Http
             {
                 var response = await client.PostAsync(endpoint, input).ConfigureAwait(false);
                 var stringifiedResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                response.EnsureSuccessStatusCode();
-                return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                    return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                }
+                catch (HttpRequestException e)
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
+                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                }
             }
         }
 
@@ -33,9 +51,17 @@ namespace AccurateBackground.Http
             {
                 var response = await client.PutAsync(endpoint, input).ConfigureAwait(false);
                 var stringifiedResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                response.EnsureSuccessStatusCode();
-                return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                    return JsonConvert.DeserializeObject<TOutput>(stringifiedResponse);
+                }
+                catch (HttpRequestException e)
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
+                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                }
             }
-        }
+        } 
     }
 }

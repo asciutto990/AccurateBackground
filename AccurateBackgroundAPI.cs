@@ -1,6 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AccurateBackground.Enums;
 using AccurateBackground.Http;
 using AccurateBackground.InputModels;
+using AccurateBackground.Models;
 using AccurateBackground.Resources;
 
 namespace AccurateBackground
@@ -70,6 +75,30 @@ namespace AccurateBackground
         public static Task<Order> PlaceOrderAsync(OrderInput input)
         {
             return AccurateCrudOperations.CreateAsync<OrderInput, Order>("order", input);
+        }
+
+        /// <summary>
+        /// Get an individual product.
+        /// </summary>
+        /// <param name="productType"></param>
+        /// <returns></returns>
+        public static ProductView GetProduct(string productType)
+        {
+            var productTypes = ProductType.GetProductTypes();
+            if (productTypes.All(p => p != productType))
+                throw new InvalidOperationException("Product type does not exist.");
+
+            return new ProductView(productType);
+        }
+
+        /// <summary>
+        /// Get all products.
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<ProductView> GetProducts()
+        {
+            var productTypes = ProductType.GetProductTypes();
+            return productTypes.Select(p => new ProductView(p));
         }
     }
 }

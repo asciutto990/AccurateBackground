@@ -58,6 +58,7 @@
     <Compile Include="InputModels\OrderInput.cs" />
     <Compile Include="Interfaces\ICandidate.cs" />
     <Compile Include="Interfaces\IOrder.cs" />
+    <Compile Include="Interfaces\ProductBase.cs" />
     <Compile Include="Models\AdditionalProduct.cs" />
     <Compile Include="Models\Alias.cs" />
     <Compile Include="Models\Conviction.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Models\JobLocation.cs" />
     <Compile Include="Models\License.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductView.cs" />
     <Compile Include="Models\Reference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Candidate.cs" />

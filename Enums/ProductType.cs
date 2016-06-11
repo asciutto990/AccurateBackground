@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace AccurateBackground.Enums
 {
     public class ProductType
@@ -25,5 +27,35 @@ namespace AccurateBackground.Enums
         public const string FEDCR = "FED-CR";
         public const string FEDCV = "FED-CV";
         public const string FEDBK = "FED-BK";
+
+        public static List<string> GetProductTypes()
+        {
+            return new List<string>
+            {
+                NCRIM,
+                TERB,
+                MOV,
+                MVR,
+                EDU,
+                EMP,
+                FACIS1,
+                FACIS,
+                SON,
+                PLV,
+                REF1,
+                DL5CUP,
+                DL5,
+                DL7,
+                DL10,
+                OFAC,
+                CIV,
+                I9FA,
+                EVA,
+                FM,
+                FEDCR,
+                FEDCV,
+                FEDBK
+            };
+        }
     }
 }

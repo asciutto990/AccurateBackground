@@ -5,6 +5,38 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#Ignore files build by Visual Studio
+*.obj
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tss
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.kml
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+Logs/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.Publish.xml
+.sass-cache
+*.[Dd]ot[Ss]ettings
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 

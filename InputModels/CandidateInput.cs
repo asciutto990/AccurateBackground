@@ -39,6 +39,7 @@ namespace AccurateBackground.InputModels
         public List<License> licenses { get; set; }
         public List<Conviction> convictions { get; set; }
         public List<Reference> references { get; set; }
-        public bool convicted { get; set; }
+        public bool? convicted { get; set; }
+        public bool prevEmployed { get; set; }
     }
 }

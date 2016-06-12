@@ -55,7 +55,7 @@
     <Compile Include="Http\AccurateHttpClientFactory.cs" />
     <Compile Include="Http\AccurateHttpRequestFactory.cs" />
     <Compile Include="Http\Models\AccurateErrorResponse.cs" />
-    <Compile Include="Http\Models\AccurateErrorResponseException.cs" />
+    <Compile Include="Http\Models\AccurateRequestException.cs" />
     <Compile Include="InputModels\CandidateInput.cs" />
     <Compile Include="InputModels\OrderInput.cs" />
     <Compile Include="Interfaces\ICandidate.cs" />

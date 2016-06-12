@@ -26,6 +26,6 @@ namespace AccurateBackground.Interfaces
         List<License> licenses { get; set; }
         List<Conviction> convictions { get; set; }
         List<Reference> references { get; set; }
-        bool convicted { get; set; }
+        bool? convicted { get; set; }
     }
 }

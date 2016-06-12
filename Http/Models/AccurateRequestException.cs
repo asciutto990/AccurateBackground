@@ -2,10 +2,10 @@
 
 namespace AccurateBackground.Http.Models
 {
-    public class AccurateErrorResponseException : InvalidOperationException
+    public class AccurateRequestException : InvalidOperationException
     {
         public AccurateErrorResponse ErrorResponse;
-        public AccurateErrorResponseException(AccurateErrorResponse e, string message)
+        public AccurateRequestException(AccurateErrorResponse e, string message)
             : base(message)
         {
             ErrorResponse = e;

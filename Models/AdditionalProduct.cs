@@ -6,7 +6,11 @@ namespace AccurateBackground.Models
 {
     public class AdditionalProduct
     {
-        [JsonConverter(typeof(StringEnumConverter))]
-        public ProductType productType { get; set; }
+        public AdditionalProduct(string product_type)
+        {
+            productType = product_type;
+        }
+
+        public string productType { get; set; }
     }
 }

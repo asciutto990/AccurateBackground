@@ -66,3 +66,24 @@ catch (AccurateRequestException e)
    //handle error
 }
 ```
+
+<b>Example: Building an Order Input</b><br/>
+```C#
+var input = new OrderInput
+  {
+      candidateId = candidate.id,
+      packageType = PackageType.PKG_PRO,
+      workflow = Workflow.EXPRESS,
+      jobLocation = new JobLocation
+      {
+          city = "Manalapan",
+          region = "NJ",
+          country = CountryCode.US
+      },
+      additionalProductTypes = new List<AdditionalProduct>
+      {
+          new AdditionalProduct(ProductType.EMP)
+      }
+  };
+```
+

@@ -21,7 +21,7 @@ namespace AccurateBackground.Http
                 catch (HttpRequestException e)
                 {
                     var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
-                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                    throw new AccurateRequestException(errorResponse, e.Message);
                 }
             }
         }
@@ -40,7 +40,7 @@ namespace AccurateBackground.Http
                 catch (HttpRequestException e)
                 {
                     var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
-                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                    throw new AccurateRequestException(errorResponse, e.Message);
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace AccurateBackground.Http
                 catch (HttpRequestException e)
                 {
                     var errorResponse = JsonConvert.DeserializeObject<AccurateErrorResponse>(stringifiedResponse);
-                    throw new AccurateErrorResponseException(errorResponse, e.Message);
+                    throw new AccurateRequestException(errorResponse, e.Message);
                 }
             }
         } 

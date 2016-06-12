@@ -21,10 +21,9 @@ namespace AccurateBackground.Http
         public static FormUrlEncodedContent BuildPutRequest(T input)
         {
             var keyValuePairs = GetKeyValuePairs(input);
-
-            var message = new FormUrlEncodedContent(keyValuePairs);
-            message.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
-            return message;
+            var content = new FormUrlEncodedContent(keyValuePairs);
+            content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded");
+            return content;
         }
 
         private static IEnumerable<KeyValuePair<string, string>> GetKeyValuePairs(T input)
@@ -34,6 +33,13 @@ namespace AccurateBackground.Http
 
             foreach (var keyValuePair1 in GetKeyValuePairsOfGenericTypes(input)) 
                 yield return keyValuePair1;
+        }
+
+        private static IEnumerable<KeyValuePair<string, string>> GetKeyValuePairsOfNonGenericTypes(T input)
+        {
+            return input.GetType().GetProperties()
+                .Where(x => x.GetValue(input, null) != null && !x.GetValue(input, null).GetType().IsGenericType)
+                .Select(prop => new KeyValuePair<string, string>(prop.Name, GetValueOfProperty(prop, input)));
         }
 
         private static IEnumerable<KeyValuePair<string, string>> GetKeyValuePairsOfGenericTypes(T input)
@@ -64,13 +70,6 @@ namespace AccurateBackground.Http
             bool boolParsed;
             var value = prop.GetValue(obj, null).ToString();
             return bool.TryParse(value, out boolParsed) ? value.ToLower() : value;
-        }
-
-        private static IEnumerable<KeyValuePair<string, string>> GetKeyValuePairsOfNonGenericTypes(T input)
-        {
-            return input.GetType().GetProperties()
-                .Where(x => x.GetValue(input, null) != null && !x.GetValue(input, null).GetType().IsGenericType)
-                .Select(prop => new KeyValuePair<string, string>(prop.Name, GetValueOfProperty(prop, input)));
         }
     }
 }

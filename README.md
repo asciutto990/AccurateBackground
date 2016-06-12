@@ -1,4 +1,4 @@
-# AccurateBackground
+# Accurate Background for .NET
 
 Official API Documentation: https://developer.accuratebackground.com/#/apidoc
 

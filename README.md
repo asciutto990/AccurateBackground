@@ -2,6 +2,11 @@
 
 Official API Documentation: https://developer.accuratebackground.com/#/apidoc
 
+To install Accurate Background for .NET, run the following command in the NuGet Package Manager Console
+```nuget
+Install-Package AccurateBackground
+```
+
 To use this .NET Accurate Background API, simply add your <b>Client Id</b> and <b>Client Secret</b> to your web.config
 
 ```xml

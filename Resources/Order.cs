@@ -21,7 +21,7 @@ namespace AccurateBackground.Resources
         public Workflow workflow { get; set; }
 
         public JobLocation jobLocation { get; set; }
-        public bool copyOfReport { get; set; }
+        public bool? copyOfReport { get; set; }
         public string[] referenceCodes { get; set; }
         public string clientComments { get; set; }
 

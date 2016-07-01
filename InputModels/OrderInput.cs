@@ -35,7 +35,7 @@ namespace AccurateBackground.InputModels
         /// <summary>
         /// Describes if a copy of the final report detail needs to be sent to the candidate. Options are: true, false
         /// </summary>
-        public bool copyOfReport { get; set; }
+        public bool? copyOfReport { get; set; }
 
         /// <summary>
         /// Reference codes. Array of strings, support up to a maximum of 4 elements. Zero based index.

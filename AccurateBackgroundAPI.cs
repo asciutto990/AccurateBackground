@@ -7,6 +7,7 @@ using AccurateBackground.Http;
 using AccurateBackground.InputModels;
 using AccurateBackground.Models;
 using AccurateBackground.Resources;
+using Report = AccurateBackground.Resources.Report;
 
 namespace AccurateBackground
 {
@@ -99,6 +100,25 @@ namespace AccurateBackground
         {
             var productTypes = ProductType.GetProductTypes();
             return productTypes.Select(p => new ProductView(p));
+        }
+
+        /// <summary>
+        /// When an Order is complete, all the data returnerd by each of the search components is collected into a comprehensive Report. That report is available as a base64 encoded string 
+        /// representing a complete HTML page, and the path to that URI is exposed in the Reports array on the Order resource. The report URI (path) looks like this "/report/572d0904f1b9a4602bc83a09"
+        /// </summary>
+        /// <param name="reportPath"></param>
+        /// <returns></returns>
+        public static Task<Report> GetReportByPathAsync(string reportPath)
+        {
+            if (reportPath.StartsWith("/"))
+                reportPath = reportPath.Remove(0);
+
+            return AccurateCrudOperations.GetAsync<Report>(reportPath);
+        }
+
+        public static Task<Report> GetReportByIdAsync(string reportId)
+        {
+            return AccurateCrudOperations.GetAsync<Report>("report/" + reportId);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AccurateBackground.Enums;
 using AccurateBackground.Interfaces;
 using AccurateBackground.Models;
@@ -42,5 +43,8 @@ namespace AccurateBackground.Resources
         public int percentageComplete { get; set; }
 
         public List<AdditionalProduct> additionalProductTypes { get; set; }
+
+        public List<Models.Report> reports { get; set; }
+        public bool hasReports => reports.Any();
     }
 }
